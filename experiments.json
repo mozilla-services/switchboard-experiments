@@ -1,0 +1,16 @@
+{
+  "onboarding-a": {
+    "match": {},
+    "buckets": {
+      "min": "0",
+      "max": "50"
+    }
+  },
+  "onboarding-b": {
+    "match": {},
+    "buckets": {
+      "min": "50",
+      "max": "100"
+    }
+  }
+}
