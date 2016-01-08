@@ -3,13 +3,13 @@
     "match": {},
     "buckets": {
       "min": "0",
-      "max": "51"
+      "max": "50"
     }
   },
   "onboarding-b": {
     "match": {},
     "buckets": {
-      "min": "51",
+      "min": "50",
       "max": "100"
     }
   }
