@@ -32,7 +32,7 @@ The format of this file is as follows:
 
 The `match` key is a json object that contains keys that map to string values.
 Each key/value pair is an **exact** condition requirement for that experiment.
-All key/value pairs **must** be satisfied for the experiment to be considered a match.
+All key/value pairs **must** be satisfied for the experiment to be considered a match. Note: when creating experiments, this means that there will be a *lot* of duplication. Help me fix that!
 
 The `buckets` key is a json object that contains two keys, `min` and `max`.
 `min` and `max` should be strings containing integer values, `0 <= x <= 100`
