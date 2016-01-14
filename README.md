@@ -14,7 +14,7 @@ The format of this file is as follows:
     },
     "buckets": {
       "min": "0",
-      "max": "50",
+      "max": "50"
     }
   },
   "another-experiment-name": {
@@ -24,9 +24,9 @@ The format of this file is as follows:
     },
     "buckets": {
       "min": "0",
-      "max": "50",
+      "max": "50"
     }
-  },
+  }
 }
 ```
 
