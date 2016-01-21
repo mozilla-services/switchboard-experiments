@@ -12,5 +12,10 @@
       "min": "50",
       "max": "100"
     }
+  },
+  "bookmark-history-menu": {
+    "match": {
+      "appId": "org.mozilla.fennec"
+    }
   }
 }
