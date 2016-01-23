@@ -1,15 +1,46 @@
 {
+  "onboarding2-a": {
+    "match": {
+      "version": "^4[6-9]\\..*"
+    },
+    "buckets": {
+      "min": "0",
+      "max": "33"
+    }
+  },
+  "onboarding2-b": {
+    "match": {
+      "version": "^4[6-9]\\..*"
+    },
+    "buckets": {
+      "min": "33",
+      "max": "66"
+    }
+  },
+  "onboarding2-c": {
+    "match": {
+      "version": "^4[6-9]\\..*"
+    },
+    "buckets": {
+      "min": "66",
+      "max": "100"
+    }
+  },
   "onboarding-a": {
-    "match": {},
+    "match": {
+      "version": "^4[3-5]\\..*"
+    },
     "buckets": {
       "min": "0",
       "max": "50"
     }
   },
   "onboarding-b": {
-    "match": {},
+    "match": {
+      "version": "^4[3-5]\\..*"
+    },
     "buckets": {
-      "min": "50",
+      "min": "51",
       "max": "100"
     }
   }
