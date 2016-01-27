@@ -1,15 +1,28 @@
 {
-  "onboarding-a": {
-    "match": {},
+  "onboarding2-a": {
+    "match": {
+        "version": "^4[6-9]\\..*"
+    },
     "buckets": {
       "min": "0",
-      "max": "50"
+      "max": "33"
     }
   },
-  "onboarding-b": {
-    "match": {},
+  "onboarding2-b": {
+    "match": {
+        "version": "^4[6-9]\\..*"
+    },
     "buckets": {
-      "min": "50",
+      "min": "33",
+      "max": "66"
+    }
+  },
+  "onboarding2-c": {
+    "match": {
+        "version": "^4[6-9]\\..*"
+    },
+    "buckets": {
+      "min": "66",
       "max": "100"
     }
   },
