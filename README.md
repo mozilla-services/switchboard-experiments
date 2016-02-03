@@ -73,12 +73,12 @@ The `buckets` key is a JSON object that contains two keys, `min` and `max`.
 To use Switchboard to expose a new feature to a portion of Firefox users, use a code snippet like this in the client:
 
 ```java
-if (SwitchBoard.isInExperiment(this, "yourexperimentname")) {
+if (SwitchBoard.isInExperiment(this, Experiments.YOUR_EXPERIMENT_NAME)) {
   // Do something interesting.
 }
 ```
 
-And then add a definition for `"yourexperimentname"` to `experiments.json`.
+You should define your experiment in [Experiments.java](http://hg.mozilla.org/mozilla-central/file/tip/mobile/android/base/java/org/mozilla/gecko/util/Experiments.java), and then add the same experiment name definition to `experiments.json`. All new experiment names must be documented in this repo.
 
 ## Testing Changes Locally
 
