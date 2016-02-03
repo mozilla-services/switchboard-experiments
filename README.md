@@ -22,6 +22,8 @@ Onboarding experiment #2 (released in Firefox 46):
 * `onboarding2-b`: 4 static feature slides
 * `onboarding2-c`: 4 static + 1 clickable (Data saving) feature slides
 
+Experiment names **should not** be reused. Becuase we have one config for all clients, we do not have a way to guarantee which version of an experiment is active. So instead, we use new experiment names.
+
 ## `experiments.json` Format
 
 The format of `experiments.json` is a set of experiment name keys, each of which maps to an object with `match` and `buckets` keys. These keys determine if the experiment is active or not for a given client.
