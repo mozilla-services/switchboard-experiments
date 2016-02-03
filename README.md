@@ -22,6 +22,8 @@ Onboarding experiment #2 (released in Firefox 46):
 * `onboarding2-b`: 4 static feature slides
 * `onboarding2-c`: 4 static + 1 clickable (Data saving) feature slides
 
+Onboarding experiments are unique because we use [local logic](http://hg.mozilla.org/mozilla-central/annotate/5f9ba76eb3b1/mobile/android/base/java/org/mozilla/gecko/firstrun/FirstrunPagerConfig.java#l59) to determine whether a client is in an experiment. We do this because we must know if the experiment is active at startup, and we cannot wait to contact the Switchboard server. Given this fact, changes to `experiments.json` **will not** affect onboarding experiments. They are included here for completeness, and so that our telemetry data includes the right experiment names, but in order to actually change the active experiments, you must patch the client.
+
 Experiment names **should not** be reused. Becuase we have one config for all clients, we do not have a way to guarantee which version of an experiment is active. So instead, we use new experiment names.
 
 ## `experiments.json` Format
