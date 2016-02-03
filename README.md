@@ -60,9 +60,21 @@ The `buckets` key is a json object that contains two keys, `min` and `max`.
 `min` and `max` should be strings containing integer values, `0 <= x <= 100`
 (switchboard is currently configured to have 100 buckets).
 
+## Making Client Changes
+
+To use Switchboard to expose a new feature to a portion of Firefox users, use a code snippet like this in the client:
+
+```java
+if (SwitchBoard.isInExperiment(this, "yourexperimentname")) {
+  // Do something interesting.
+}
+```
+
+And then add a definition for `"yourexperimentname"` to `experiments.json`.
+
 ## Testing Changes Locally
 
-To test your config changes in a [local Firefox build](https://wiki.mozilla.org/Mobile/Fennec/Android), follow these steps. 
+To test your config changes in a local Firefox build, follow these steps. 
 
 1. `git clone git@github.com:mozilla-services/switchboard-server.git` (or your own fork)
 2. `cd switchboard-server`
