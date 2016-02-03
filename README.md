@@ -22,7 +22,7 @@ Onboarding experiment #2 (released in Firefox 46):
 * `onboarding2-b`: 4 static feature slides
 * `onboarding2-c`: 4 static + 1 clickable (Data saving) feature slides
 
-## JSON Format
+## `experiments.json` Format
 
 The format of the `experiments.json` file is as follows:
 
@@ -59,3 +59,16 @@ All key/value pairs **must** be satisfied for the experiment to be considered a 
 The `buckets` key is a json object that contains two keys, `min` and `max`.
 `min` and `max` should be strings containing integer values, `0 <= x <= 100`
 (switchboard is currently configured to have 100 buckets).
+
+## Testing Changes Locally
+
+To test your config changes in a [local Firefox build](https://wiki.mozilla.org/Mobile/Fennec/Android), follow these steps. 
+
+1. `git clone git@github.com:mozilla-services/switchboard-server.git` (or your own fork)
+2. `cd switchboard-server`
+3. `npm install`
+4. `EXPERIMENTS_FILE=path/to/your/experiments.json node index.js`
+5. Get a URL for your local server (margaret used [localtunnel](https://localtunnel.me/))
+6. Update the Switchboard default server URLs in [BrowserApp.java](http://hg.mozilla.org/mozilla-central/file/c0ba5835ca48/mobile/android/base/java/org/mozilla/gecko/BrowserApp.java#l587) to match your local server URL
+7. Rebuild and run Fennec
+
