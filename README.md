@@ -24,7 +24,9 @@ Onboarding experiment #2 (released in Firefox 46):
 
 ## `experiments.json` Format
 
-The format of the `experiments.json` file is as follows:
+The format of `experiments.json` is a set of experiment name keys, each of which maps to an object with `match` and `buckets` keys. These keys determine if the experiment is active or not for a given client.
+
+For example:
 
 ```json
 {
@@ -48,15 +50,19 @@ The format of the `experiments.json` file is as follows:
   }
 }
 ```
+### `match` Key
 
-The `match` key is a json object that contains keys that map to string values.
+The `match` key is a JSON object that contains keys that map to string values.
 Each key/value pair is an **exact** condition requirement for that experiment.
 All key/value pairs **must** be satisfied for the experiment to be considered a match. Note: when creating experiments, this means that there will be a *lot* of duplication. Help me fix that!
 
+Here is a list of keys that are currently supported:
 * `appId`: The Android app ID (e.g. `org.mozilla.fennec`, `org.mozilla.firefox_beta`, `org.mozilla.firefox`)
 * ...
 
-The `buckets` key is a json object that contains two keys, `min` and `max`.
+### `buckets` Key
+
+The `buckets` key is a JSON object that contains two keys, `min` and `max`.
 `min` and `max` should be strings containing integer values, `0 <= x <= 100`
 (switchboard is currently configured to have 100 buckets).
 
