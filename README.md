@@ -57,8 +57,9 @@ For example:
 ### `match` Key
 
 The `match` key is a JSON object that contains keys that map to string values.
-Each key/value pair is an **exact** condition requirement for that experiment.
-All key/value pairs **must** be satisfied for the experiment to be considered a match. Note: when creating experiments, this means that there will be a *lot* of duplication. Help me fix that!
+Each key/value pair is a regular expression match requirement for that experiment.
+Regular expressions are matched by the node backend, and follow [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) format.
+All key/value pairs **must** be satisfied for the experiment to be considered a match.
 
 Here is a list of keys that are currently supported:
 * `appId`: The Android app ID (e.g. `org.mozilla.fennec`, `org.mozilla.firefox_beta`, `org.mozilla.firefox`)
@@ -84,7 +85,7 @@ You should define your experiment in [Experiments.java](http://hg.mozilla.org/mo
 
 ## Testing Changes Locally
 
-To test your config changes in a local Firefox build, follow these steps. 
+To test your config changes in a local Firefox build, follow these steps.
 
 1. `git clone git@github.com:mozilla-services/switchboard-server.git` (or your own fork)
 2. `cd switchboard-server`
@@ -93,4 +94,3 @@ To test your config changes in a local Firefox build, follow these steps.
 5. Get a URL for your local server (margaret used [localtunnel](https://localtunnel.me/))
 6. Update the Switchboard default server URLs in [BrowserApp.java](http://hg.mozilla.org/mozilla-central/file/c0ba5835ca48/mobile/android/base/java/org/mozilla/gecko/BrowserApp.java#l587) to match your local server URL
 7. Rebuild and run Fennec
-
