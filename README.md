@@ -94,3 +94,16 @@ To test your config changes in a local Firefox build, follow these steps.
 5. Get a URL for your local server (margaret used [localtunnel](https://localtunnel.me/))
 6. Update the Switchboard default server URLs in [BrowserApp.java](http://hg.mozilla.org/mozilla-central/file/c0ba5835ca48/mobile/android/base/java/org/mozilla/gecko/BrowserApp.java#l587) to match your local server URL
 7. Rebuild and run Fennec
+
+## Selecting specific experiments
+
+To test a specific experiment, start Fennec with the following command:
+
+'adb shell am start <package-name> --es switchboard-uuid <uuid>'
+
+with a uuid that corresponds to an experiment.
+
+### Sample Experiment UUIDs/buckets
+onboarding2-a [0-33]: 1
+onboarding2-b [33-66]: 4f6dd32e-5a5f-45db-9219-40f7c6cb4cd0
+onboarding2-c [66-100]: 79693e2a-d3ea-44ca-94f3-04f0887eaeb3
