@@ -97,9 +97,9 @@ To test a specific experiment, start Fennec with the following command:
 
 `adb shell am start <package-name> --es switchboard-uuid <uuid>`
 
-with a uuid that corresponds to an experiment.
+with a uuid that corresponds to a bucket.
 
-### Sample Experiment UUIDs/buckets
-* onboarding2-a [0-33]: `1`
-* onboarding2-b [33-66]: `4f6dd32e-5a5f-45db-9219-40f7c6cb4cd0`
-* onboarding2-c [66-100]: `79693e2a-d3ea-44ca-94f3-04f0887eaeb3`
+### Sample UUIDs/buckets
+* [0-33]: `1`
+* [33-66]: `4f6dd32e-5a5f-45db-9219-40f7c6cb4cd0`
+* [66-100]: `79693e2a-d3ea-44ca-94f3-04f0887eaeb3`
