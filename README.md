@@ -13,16 +13,7 @@ UI experiments:
 * `bookmark-history-menu`: Display History and Bookmarks in 3-dot menu
 * `search-term`: Show search mode (instead of home panels) when tapping on urlbar if there is a search term in the urlbar
 
-Onboarding experiment #1 (released in Firefox 43):
-* `onboarding-a`: Single Welcome screen
-* `onboarding-b`: Welcome screen, Import screen
-
-Onboarding experiment #2 (released in Firefox 46):
-* `onboarding2-a`: Single (blue) Welcome screen
-* `onboarding2-b`: 4 static feature slides
-* `onboarding2-c`: 4 static + 1 clickable (Data saving) feature slides
-
-Onboarding experiments are unique because we use [local logic](http://hg.mozilla.org/mozilla-central/annotate/5f9ba76eb3b1/mobile/android/base/java/org/mozilla/gecko/firstrun/FirstrunPagerConfig.java#l59) to determine whether a client is in an experiment. We do this because we must know if the experiment is active at startup, and we cannot wait to contact the Switchboard server. Given this fact, changes to `experiments.json` **will not** affect onboarding experiments. They are included here for completeness, and so that our telemetry data includes the right experiment names, but in order to actually change the active experiments, you must patch the client.
+Onboarding experiments are unique because we use local logic to determine whether a client is in an experiment. We do this because we must know if the experiment is active at startup, and we cannot wait to contact the Switchboard server. Given this fact, changes to `experiments.json` will not affect onboarding experiments. Those experiments are maintained in the client codebase.
 
 Experiment names **should not** be reused. Becuase we have one config for all clients, we do not have a way to guarantee which version of an experiment is active. So instead, we use new experiment names.
 
@@ -57,8 +48,9 @@ For example:
 ### `match` Key
 
 The `match` key is a JSON object that contains keys that map to string values.
-Each key/value pair is an **exact** condition requirement for that experiment.
-All key/value pairs **must** be satisfied for the experiment to be considered a match. Note: when creating experiments, this means that there will be a *lot* of duplication. Help me fix that!
+Each key/value pair is a regular expression match requirement for that experiment.
+Regular expressions are matched by the node backend, and follow [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) format.
+All key/value pairs **must** be satisfied for the experiment to be considered a match.
 
 Here is a list of keys that are currently supported:
 * `appId`: The Android app ID (e.g. `org.mozilla.fennec`, `org.mozilla.firefox_beta`, `org.mozilla.firefox`)
@@ -84,7 +76,7 @@ You should define your experiment in [Experiments.java](http://hg.mozilla.org/mo
 
 ## Testing Changes Locally
 
-To test your config changes in a local Firefox build, follow these steps. 
+To test your config changes in a local Firefox build, follow these steps.
 
 1. `git clone git@github.com:mozilla-services/switchboard-server.git` (or your own fork)
 2. `cd switchboard-server`
@@ -94,3 +86,15 @@ To test your config changes in a local Firefox build, follow these steps.
 6. Update the Switchboard default server URLs in [BrowserApp.java](http://hg.mozilla.org/mozilla-central/file/c0ba5835ca48/mobile/android/base/java/org/mozilla/gecko/BrowserApp.java#l587) to match your local server URL
 7. Rebuild and run Fennec
 
+## Selecting specific experiments
+
+To test a specific experiment, start Fennec with the following command:
+
+`adb shell am start <package-name> --es switchboard-uuid <uuid>`
+
+with a uuid that corresponds to an experiment.
+
+### Sample Experiment UUIDs/buckets
+* onboarding2-a [0-33]: `1`
+* onboarding2-b [33-66]: `4f6dd32e-5a5f-45db-9219-40f7c6cb4cd0`
+* onboarding2-c [66-100]: `79693e2a-d3ea-44ca-94f3-04f0887eaeb3`
