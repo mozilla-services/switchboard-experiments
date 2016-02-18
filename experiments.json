@@ -8,10 +8,10 @@
       "max": "100"
     }
   },
-  "stage": {
+  "search-term": {
     "match": {},
     "buckets": {
-      "min": "0",
+      "min": "50",
       "max": "100"
     }
   }
