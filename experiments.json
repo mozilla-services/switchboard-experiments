@@ -1,12 +1,14 @@
 {
-  "onboarding-a": {
-    "match": {},
+  "bookmark-history-menu": {
+    "match": {
+      "appId": "org.mozilla.fennec"
+    },
     "buckets": {
       "min": "0",
-      "max": "50"
+      "max": "100"
     }
   },
-  "onboarding-b": {
+  "search-term": {
     "match": {},
     "buckets": {
       "min": "50",
