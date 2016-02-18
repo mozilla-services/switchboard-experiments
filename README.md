@@ -5,6 +5,11 @@ This repository contains the JSON file that configures the [switchboard](https:/
 
 Any changes to this file require the approval of a Firefox for Android peer, such as [@leibovic](https://github.com/leibovic), [@liuche](https://github.com/liuche), or [@mfinkle](https://github.com/mfinkle). Additionally, changes that affect release branches (i.e. Aurora/Beta/Release), must have approval from our product and release management teams.
 
+## Deployments
+
+* `switchboard.services.mozilla.com` is the production endpoint. It pulls experiments from the `master` branch. There is also a legacy `switchboard-server.dev.mozaws.net` endpoint, which also points the the production deployment.
+* `switchboard.stage.mozaws.net` is the staging endpoint. It pulls experiments from the `stage` branch.
+
 ## Experiment Defintions
 
 Experiment names are defined in the client in [Experiments.java](http://hg.mozilla.org/mozilla-central/file/tip/mobile/android/base/java/org/mozilla/gecko/util/Experiments.java).
