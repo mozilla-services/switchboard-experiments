@@ -9,7 +9,9 @@
     }
   },
   "search-term": {
-    "match": {},
+    "match": {
+      "appId": "org.mozilla.fennec"
+    },
     "buckets": {
       "min": "50",
       "max": "100"
