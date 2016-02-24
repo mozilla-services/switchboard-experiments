@@ -15,8 +15,9 @@ Any changes to this file require the approval of a Firefox for Android peer, suc
 Experiment names are defined in the client in [Experiments.java](http://hg.mozilla.org/mozilla-central/file/tip/mobile/android/base/java/org/mozilla/gecko/util/Experiments.java).
 
 UI experiments:
-* `bookmark-history-menu`: Display History and Bookmarks in 3-dot menu
-* `search-term`: Show search mode (instead of home panels) when tapping on urlbar if there is a search term in the urlbar
+* `bookmark-history-menu`: Display "History" and "Bookmarks" menu items in 3-dot menu.
+* `search-term`: Show search mode (instead of home panels) when tapping on urlbar if there is a search term in the urlbar.
+* `whatsnew-notification`: Show a "What's new" notification when the browser updates. Tapping on this notification will open a new tab with a SUMO article about what is new in Firefox.
 
 Onboarding experiments are unique because we use local logic to determine whether a client is in an experiment. We do this because we must know if the experiment is active at startup, and we cannot wait to contact the Switchboard server. Given this fact, changes to `experiments.json` will not affect onboarding experiments. Those experiments are maintained in the client codebase.
 

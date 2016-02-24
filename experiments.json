@@ -16,5 +16,13 @@
       "min": "0",
       "max": "100"
     }
+  },
+  "whatsnew-notification": {
+    "match": {
+    },
+    "buckets": {
+      "min": "0",
+      "max": "0"
+    }
   }
 }
