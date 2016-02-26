@@ -13,7 +13,7 @@
       "appId": "org.mozilla.fennec"
     },
     "buckets": {
-      "min": "50",
+      "min": "0",
       "max": "100"
     }
   }
