@@ -54,7 +54,7 @@ For example:
 
 The `match` key is a JSON object that contains keys that map to string values.
 Each key/value pair is a regular expression match requirement for that experiment.
-Regular expressions are matched by the node backend, and follow [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) format.
+Regular expressions are matched by the node backend, and follow [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) format. Note: this means that if you want an **exact** string match, as opposed to a RegExp that will match strings that **contain** your specified string, you must use string delimiters (^ and $ for start and end of string respectively).
 All key/value pairs **must** be satisfied for the experiment to be considered a match.
 
 Here is a list of keys that are currently supported:
