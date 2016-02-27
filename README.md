@@ -76,30 +76,22 @@ if (SwitchBoard.isInExperiment(this, Experiments.YOUR_EXPERIMENT_NAME)) {
   // Do something interesting.
 }
 ```
-
 You should define your experiment in [Experiments.java](http://hg.mozilla.org/mozilla-central/file/tip/mobile/android/base/java/org/mozilla/gecko/util/Experiments.java), and then add the same experiment name definition to `experiments.json`. All new experiment names must be documented in this repo.
 
-## Testing Changes Locally
+To self-select into an experiment that is only active for certain buckets, you can start Fennec with a UUID that corresponds to a given bucket:
 
-To test your config changes in a local Firefox build, follow these steps.
+`adb shell am start --es "switchboard-uuid" "<uuid>" <package-name> `
 
-1. `git clone git@github.com:mozilla-services/switchboard-server.git` (or your own fork)
-2. `cd switchboard-server`
-3. `npm install`
-4. `EXPERIMENTS_FILE=path/to/your/experiments.json node index.js`
-5. Get a URL for your local server (margaret used [localtunnel](https://localtunnel.me/))
-6. Update the Switchboard default server URLs in [BrowserApp.java](http://hg.mozilla.org/mozilla-central/file/c0ba5835ca48/mobile/android/base/java/org/mozilla/gecko/BrowserApp.java#l587) to match your local server URL
-7. Rebuild and run Fennec
-
-## Selecting specific experiments
-
-To test a specific experiment, start Fennec with the following command:
-
-`adb shell am start <package-name> --es switchboard-uuid <uuid>`
-
-with a uuid that corresponds to a bucket.
-
-### Sample UUIDs/buckets
+Sample UUIDs/buckets:
 * [0-33]: `1`
 * [33-66]: `4f6dd32e-5a5f-45db-9219-40f7c6cb4cd0`
 * [66-100]: `79693e2a-d3ea-44ca-94f3-04f0887eaeb3`
+
+## Making Config Changes
+
+You can use the `stage` branch to test your config changes. Once you push a change to `stage`, you can start Fennec with an intent extra to specify a custom Switchboard server host:
+
+`adb shell am start --es "switchboard-host" "switchboard.stage.mozaws.net" <package-name>`
+
+Support for this intent extra is currently on Nightly only, but once this is in all release channels, we should use this to test config changes against all versions of the client.
+
