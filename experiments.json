@@ -1,7 +1,7 @@
 {
   "bookmark-history-menu": {
     "match": {
-      "appId": "org.mozilla.fennec"
+      "appId": "^org.mozilla.fennec$"
     },
     "buckets": {
       "min": "0",
@@ -10,7 +10,7 @@
   },
   "search-term": {
     "match": {
-      "appId": "org.mozilla.fennec"
+      "appId": "^org.mozilla.fennec$"
     },
     "buckets": {
       "min": "0",
