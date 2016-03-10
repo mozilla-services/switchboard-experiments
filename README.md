@@ -12,10 +12,12 @@ Any changes to this file require the approval of a Firefox for Android peer, suc
 
 ## Experiment Defintions
 
-Experiment names are defined in the client in [Experiments.java](http://hg.mozilla.org/mozilla-central/file/tip/mobile/android/base/java/org/mozilla/gecko/util/Experiments.java).
+Experiment names are defined in the client in [Experiments.java](http://hg.mozilla.org/mozilla-central/file/tip/mobile/android/base/java/org/mozilla/gecko/util/Experiments.java) and in the `Experiments` object in [browser.js](http://hg.mozilla.org/mozilla-central/file/tip/mobile/android/chrome/content/browser.js);
 
 UI experiments:
 * `bookmark-history-menu`: Display "History" and "Bookmarks" menu items in 3-dot menu.
+* `malware-download-protection`: Enable malware download protection.
+* `offline-cache`: Try to load pages from disk cache when network is offline.
 * `search-term`: Show search mode (instead of home panels) when tapping on urlbar if there is a search term in the urlbar.
 * `whatsnew-notification`: Show a "What's new" notification when the browser updates. Tapping on this notification will open a new tab with a SUMO article about what is new in Firefox.
 
