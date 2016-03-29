@@ -67,8 +67,21 @@ Here is a list of keys that are currently supported:
 ### `buckets` Key
 
 The `buckets` key is a JSON object that contains two keys, `min` and `max`.
-`min` and `max` should be strings containing integer values, `0 <= x <= 100`
-The bounds are [low, high). Switchboard is currently configured to have 100 buckets (0-99), and because the high is a non-inclusive upper bound experiments should use 100 as the high value. There is no check for out of bounds values, so "disabled" experiments can have low/high buckets keys that are either out of bounds or have low == high.
+`min` and `max` should be strings containing integer values, `0 <= min <= max <= 100`. The bounds are [min, max).
+
+The experiment "experiment-name" below will trigger for buckets 0-49:
+
+```
+"experiment-name": {
+  "match": {},
+  "buckets": {
+    "min": "0",
+    "max": "50"
+  }
+}
+```
+
+Switchboard is currently configured to have 100 buckets (0-99), but the max value is a non-inclusive upper bound, meaning that unless a value of 100 or higher is used as the max, bucket 99 will not be included. There is no check for out of bounds values, so "disabled" experiments can have min/max buckets keys that are either out of bounds or have min == max.
 
 ## Making Client Changes
 
