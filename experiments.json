@@ -33,5 +33,32 @@
       "min": "0",
       "max": "0"
     }
+  },
+  "content-notifications-12hrs": {
+    "match": {
+      "appId": "^org.mozilla.fennec$"
+    },
+    "buckets": {
+      "min": "25",
+      "max": "50"
+    }
+  },
+  "content-notifications-8am": {
+    "match": {
+      "appId": "^org.mozilla.fennec$"
+    },
+    "buckets": {
+      "min": "50",
+      "max": "75"
+    }
+  },
+  "content-notifications-5pm": {
+    "match": {
+      "appId": "^org.mozilla.fennec$"
+    },
+    "buckets": {
+      "min": "75",
+      "max": "100"
+    }
   }
 }
