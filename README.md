@@ -60,9 +60,13 @@ Each key/value pair is a regular expression match requirement for that experimen
 Regular expressions are matched by the node backend, and follow [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) format. Note: this means that if you want an **exact** string match, as opposed to a RegExp that will match strings that **contain** your specified string, you must use string delimiters (^ and $ for start and end of string respectively).
 All key/value pairs **must** be satisfied for the experiment to be considered a match.
 
-Here is a list of keys that are currently supported:
+Supported keys are specified by the client, as parameters on the [server request(http://hg.mozilla.org/mozilla-central/file/494289c72ba3/mobile/android/thirdparty/com/keepsafe/switchboard/SwitchBoard.java#l226). Here is a list of keys that are currently supported in Firefox for Android:
 * `appId`: The Android app ID (e.g. `org.mozilla.fennec`, `org.mozilla.firefox_beta`, `org.mozilla.firefox`)
-* ...
+* `version`: The Firefox app version number (e.g. `47.0a1'`, `46.0`)
+* `lang`: Language, pulled from the default locale (e.g. `eng`)
+* `country`: Country, pulled from the default locale (e.g. `USA`)
+* `device`: Android device name
+* `manufacturer`: Android device manufacturer
 
 ### `buckets` Key
 
