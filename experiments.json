@@ -60,5 +60,19 @@
       "min": "75",
       "max": "100"
     }
-  }
+  },
+  "promote-add-to-homescreen": {
+    "match": {
+      "appId": "^org.mozilla.fennec$"
+    },
+    "buckets": {
+      "min": 50,
+      "max": 100
+    },
+    "values": {
+      "minimumTotalVisits": 5,
+      "lastVisitMinimumAgeMs": 30000,
+      "lastVisitMaximumAgeMs": 600000
+    }
+  } 
 }
