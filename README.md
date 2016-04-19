@@ -23,6 +23,7 @@ UI experiments:
 * `content-notifications-12hrs`: Enable content notifications and check for updates every 12 hours at random times based on app start.
 * `content-notifications-8am`: Enable content notifications and check for updates every day at 8 am.
 * `content-notifications-5pm`: Enable content notifications and check for updates every day at 5 pm.
+* `promote-add-to-homescreen`: Show prompt to add the current website to the home screen if this website is visited frequently ([bug 1232706](https://bugzilla.mozilla.org/show_bug.cgi?id=1232706))
 
 Onboarding experiments are unique because we use local logic to determine whether a client is in an experiment. We do this because we must know if the experiment is active at startup, and we cannot wait to contact the Switchboard server. Given this fact, changes to `experiments.json` will not affect onboarding experiments. Those experiments are maintained in the client codebase.
 
