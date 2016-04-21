@@ -74,5 +74,14 @@
       "lastVisitMinimumAgeMs": 30000,
       "lastVisitMaximumAgeMs": 600000
     }
+  },
+  "triple-readerview-bookmark-prompt": {
+    "match": {
+      "appId": "^org.mozilla.fennec$"
+    },
+    "buckets": {
+      "min": 0,
+      "max": 50
+    }
   } 
 }
