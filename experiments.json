@@ -63,7 +63,7 @@
   },
   "promote-add-to-homescreen": {
     "match": {
-      "appId": "^org.mozilla.fennec$"
+      "appId": "^org.mozilla.fennec"
     },
     "buckets": {
       "min": 50,
