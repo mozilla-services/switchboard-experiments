@@ -1,7 +1,6 @@
 {
   "bookmark-history-menu": {
     "match": {
-      "appId": "^org.mozilla.fennec|^org.mozilla.firefox_beta$"
     },
     "buckets": {
       "min": "0",
