@@ -35,7 +35,7 @@
   },
   "content-notifications-12hrs": {
     "match": {
-      "appId": "^org.mozilla.fennec$"
+      "appId": "^org.mozilla.fennec"
     },
     "buckets": {
       "min": "25",
@@ -44,7 +44,7 @@
   },
   "content-notifications-8am": {
     "match": {
-      "appId": "^org.mozilla.fennec$"
+      "appId": "^org.mozilla.fennec"
     },
     "buckets": {
       "min": "50",
@@ -53,7 +53,7 @@
   },
   "content-notifications-5pm": {
     "match": {
-      "appId": "^org.mozilla.fennec$"
+      "appId": "^org.mozilla.fennec"
     },
     "buckets": {
       "min": "75",
@@ -62,7 +62,7 @@
   },
   "promote-add-to-homescreen": {
     "match": {
-      "appId": "^org.mozilla.fennec$"
+      "appId": "^org.mozilla.fennec"
     },
     "buckets": {
       "min": 50,
