@@ -65,15 +65,32 @@ Each key/value pair is a regular expression match requirement for that experimen
 Regular expressions are matched by the node backend, and follow [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) format. Note: this means that if you want an **exact** string match, as opposed to a RegExp that will match strings that **contain** your specified string, you must use string delimiters (^ and $ for start and end of string respectively).
 All key/value pairs **must** be satisfied for the experiment to be considered a match.
 
-Here is a list of keys that are currently supported:
+Supported keys are specified by the client, as parameters on the [server request](http://hg.mozilla.org/mozilla-central/file/494289c72ba3/mobile/android/thirdparty/com/keepsafe/switchboard/SwitchBoard.java#l226). Here is a list of keys that are currently supported in Firefox for Android:
 * `appId`: The Android app ID (e.g. `org.mozilla.fennec`, `org.mozilla.firefox_beta`, `org.mozilla.firefox`)
-* ...
+* `version`: The Firefox app version number (e.g. `47.0a1'`, `46.0`)
+* `lang`: Language, pulled from the default locale (e.g. `eng`)
+* `country`: Country, pulled from the default locale (e.g. `USA`)
+* `device`: Android device name
+* `manufacturer`: Android device manufacturer
 
 ### `buckets` Key
 
 The `buckets` key is a JSON object that contains two keys, `min` and `max`.
-`min` and `max` should be strings containing integer values, `0 <= x <= 100`
-(switchboard is currently configured to have 100 buckets).
+`min` and `max` should be strings containing integer values, `0 <= min <= max <= 100`. The bounds are [min, max).
+
+The experiment "experiment-name" below will trigger for buckets 0-49:
+
+```
+"experiment-name": {
+  "match": {},
+  "buckets": {
+    "min": "0",
+    "max": "50"
+  }
+}
+```
+
+Switchboard is currently configured to have 100 buckets (0-99), but the max value is a non-inclusive upper bound, meaning that unless a value of 100 or higher is used as the max, bucket 99 will not be included. There is no check for out of bounds values, so "disabled" experiments can have min/max buckets keys that are either out of bounds or have min == max.
 
 ## Making Client Changes
 
@@ -86,14 +103,7 @@ if (SwitchBoard.isInExperiment(this, Experiments.YOUR_EXPERIMENT_NAME)) {
 ```
 You should define your experiment in [Experiments.java](http://hg.mozilla.org/mozilla-central/file/tip/mobile/android/base/java/org/mozilla/gecko/util/Experiments.java), and then add the same experiment name definition to `experiments.json`. All new experiment names must be documented in this repo.
 
-To self-select into an experiment that is only active for certain buckets, you can start Fennec with a UUID that corresponds to a given bucket:
-
-`adb shell am start --es "switchboard-uuid" "<uuid>" <package-name> `
-
-Sample UUIDs/buckets:
-* [0-33]: `1`
-* [33-66]: `4f6dd32e-5a5f-45db-9219-40f7c6cb4cd0`
-* [66-100]: `79693e2a-d3ea-44ca-94f3-04f0887eaeb3`
+To force enable a feature for testing on the client, you can use the [switchboard-experiments add-on](https://addons.mozilla.org/en-US/android/addon/switchboard-experiments/). Note: Support for this has only landed in Firefox 49, but may be uplifted to 47 or 48.
 
 ## Making Config Changes
 
