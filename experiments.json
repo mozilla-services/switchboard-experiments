@@ -82,5 +82,23 @@
       "min": 0,
       "max": 50
     }
-  } 
+  },
+  "urlbar-show-origin-only": {
+    "match": {
+      "appId": "^org.mozilla.fennec|^org.mozilla.firefox_beta$"
+    },
+    "buckets": {
+      "min": "0",
+      "max": "100"
+    }
+  },
+  "urlbar-show-ev-cert-owner": {
+    "match": {
+      "appId": "^org.mozilla.fennec|^org.mozilla.firefox_beta$"
+    },
+    "buckets": {
+      "min": "0",
+      "max": "100"
+    }
+  }
 }

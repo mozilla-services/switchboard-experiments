@@ -25,6 +25,8 @@ UI experiments:
 * `content-notifications-5pm`: Enable content notifications and check for updates every day at 5 pm.
 * `promote-add-to-homescreen`: Show prompt to add the current website to the home screen if this website is visited frequently ([bug 1232706](https://bugzilla.mozilla.org/show_bug.cgi?id=1232706))
 * `triple-readerview-bookmark-prompt`: Show prompt to bookmark the current page if it has been reader-viewed 3 times ([bug 1247689](https://bugzilla.mozilla.org/show_bug.cgi?id=1247689))
+* `urlbar-show-origin-only`: Only show origin in URL bar instead of full URL ([bug 1236431](https://bugzilla.mozilla.org/show_bug.cgi?id=1236431))
+* `urlbar-show-ev-cert-owner`: Show name of organization (EV cert) instead of full URL in URL bar ([bug 1249594](https://bugzilla.mozilla.org/show_bug.cgi?id=1249594))
 
 Onboarding experiments are unique because we use local logic to determine whether a client is in an experiment. We do this because we must know if the experiment is active at startup, and we cannot wait to contact the Switchboard server. Given this fact, changes to `experiments.json` will not affect onboarding experiments. Those experiments are maintained in the client codebase.
 
