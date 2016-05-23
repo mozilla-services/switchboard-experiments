@@ -100,5 +100,14 @@
       "min": "0",
       "max": "100"
     }
+  },
+  "download-content-catalog-sync": {
+    "match": {
+      "appId": "^org.mozilla.fennec$"
+    },
+    "buckets": {
+      "min": "0",
+      "max": "50"
+    }
   }
 }
