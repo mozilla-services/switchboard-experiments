@@ -85,20 +85,27 @@
   },
   "urlbar-show-origin-only": {
     "match": {
-      "appId": "^org.mozilla.fennec|^org.mozilla.firefox_beta$"
     },
     "buckets": {
       "min": "0",
-      "max": "100"
+      "max": "0"
     }
   },
   "urlbar-show-ev-cert-owner": {
     "match": {
-      "appId": "^org.mozilla.fennec|^org.mozilla.firefox_beta$"
     },
     "buckets": {
       "min": "0",
-      "max": "100"
+      "max": "0"
+    }
+  },
+  "download-content-catalog-sync": {
+    "match": {
+      "appId": "^org.mozilla.fennec$"
+    },
+    "buckets": {
+      "min": "0",
+      "max": "50"
     }
   }
 }
