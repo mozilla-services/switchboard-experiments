@@ -59,7 +59,7 @@
   },
   "promote-add-to-homescreen": {
     "match": {
-      "appId": "^org.mozilla.fennec"
+      "appId": "^org.mozilla.fennec|^org.mozilla.firefox_beta$"
     },
     "buckets": {
       "min": 50,
@@ -102,7 +102,7 @@
     },
     "buckets": {
       "min": "0",
-      "max": "50"
+      "max": "100"
     }
   }
 }
