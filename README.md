@@ -10,7 +10,7 @@ Any changes to this file require the approval of a Firefox for Android peer, suc
 * `switchboard.services.mozilla.com` is the production endpoint. It pulls experiments from the `master` branch. There is also a legacy `switchboard-server.dev.mozaws.net` endpoint, which also points the the production deployment.
 * `switchboard.stage.mozaws.net` is the staging endpoint. It pulls experiments from the `stage` branch.
 
-## Experiment Defintions
+## Experiment Definitions
 
 Experiment names are defined in the client in [Experiments.java](http://hg.mozilla.org/mozilla-central/file/tip/mobile/android/base/java/org/mozilla/gecko/util/Experiments.java) and in the `Experiments` object in [browser.js](http://hg.mozilla.org/mozilla-central/file/tip/mobile/android/chrome/content/browser.js);
 
