@@ -16,15 +16,6 @@
       "max": "100"
     }
   },
-  "search-term": {
-    "match": {
-      "appId": "^org.mozilla.fennec|^org.mozilla.firefox_beta$"
-    },
-    "buckets": {
-      "min": "0",
-      "max": "100"
-    }
-  },
   "whatsnew-notification": {
     "match": {
     },
@@ -35,34 +26,31 @@
   },
   "content-notifications-12hrs": {
     "match": {
-      "appId": "^org.mozilla.fennec"
     },
     "buckets": {
-      "min": "25",
-      "max": "50"
+      "min": "0",
+      "max": "0"
     }
   },
   "content-notifications-8am": {
     "match": {
-      "appId": "^org.mozilla.fennec"
     },
     "buckets": {
-      "min": "50",
-      "max": "75"
+      "min": "0",
+      "max": "0"
     }
   },
   "content-notifications-5pm": {
     "match": {
-      "appId": "^org.mozilla.fennec"
     },
     "buckets": {
-      "min": "75",
-      "max": "100"
+      "min": "0",
+      "max": "0"
     }
   },
   "promote-add-to-homescreen": {
     "match": {
-      "appId": "^org.mozilla.fennec"
+      "appId": "^org.mozilla.fennec|^org.mozilla.firefox_beta$"
     },
     "buckets": {
       "min": 50,
@@ -82,5 +70,30 @@
       "min": 0,
       "max": 50
     }
-  } 
+  },
+  "urlbar-show-origin-only": {
+    "match": {
+    },
+    "buckets": {
+      "min": "0",
+      "max": "0"
+    }
+  },
+  "urlbar-show-ev-cert-owner": {
+    "match": {
+    },
+    "buckets": {
+      "min": "0",
+      "max": "0"
+    }
+  },
+  "download-content-catalog-sync": {
+    "match": {
+      "appId": "^org.mozilla.fennec$"
+    },
+    "buckets": {
+      "min": "0",
+      "max": "100"
+    }
+  }
 }
