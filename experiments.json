@@ -16,15 +16,6 @@
       "max": "100"
     }
   },
-  "search-term": {
-    "match": {
-      "appId": "^org.mozilla.fennec|^org.mozilla.firefox_beta$"
-    },
-    "buckets": {
-      "min": "0",
-      "max": "100"
-    }
-  },
   "whatsnew-notification": {
     "match": {
     },
@@ -73,11 +64,11 @@
   },
   "triple-readerview-bookmark-prompt": {
     "match": {
-      "appId": "^org.mozilla.fennec$"
+      "appId": "^org.mozilla.fennec|^org.mozilla.firefox_beta$"
     },
     "buckets": {
       "min": "0",
-      "max": "50"
+      "max": "100"
     }
   },
   "urlbar-show-origin-only": {
