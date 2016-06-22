@@ -23,7 +23,7 @@ UI experiments:
 * `content-notifications-8am`: Enable content notifications and check for updates every day at 8 am.
 * `content-notifications-5pm`: Enable content notifications and check for updates every day at 5 pm.
 * `promote-add-to-homescreen`: Show prompt to add the current website to the home screen if this website is visited frequently ([bug 1232706](https://bugzilla.mozilla.org/show_bug.cgi?id=1232706))
-* `triple-readerview-bookmark-prompt`: Show prompt to bookmark the current page if it has been reader-viewed 3 times ([bug 1247689](https://bugzilla.mozilla.org/show_bug.cgi?id=1247689))
+* `triple-readerview-bookmark-prompt`: Show prompt to bookmark the current page the first time the user enters reader view (the fact that this experiment name includes the term "triple" is a historical artifact)([bug 1247689](https://bugzilla.mozilla.org/show_bug.cgi?id=1247689))
 * `urlbar-show-origin-only`: Only show origin in URL bar instead of full URL ([bug 1236431](https://bugzilla.mozilla.org/show_bug.cgi?id=1236431))
 * `urlbar-show-ev-cert-owner`: Show name of organization (EV cert) instead of full URL in URL bar ([bug 1249594](https://bugzilla.mozilla.org/show_bug.cgi?id=1249594))
 * `download-content-catalog-sync`: Synchronize catalog of downloadable content from Kinto (Staged rollout - [bug 1271352](https://bugzilla.mozilla.org/show_bug.cgi?id=1271352))
@@ -114,4 +114,3 @@ You can use the `stage` branch to test your config changes. Once you push a chan
 `adb shell am start --es "switchboard-host" "switchboard.stage.mozaws.net" <package-name>`
 
 Support for this intent extra is currently on Nightly only, but once this is in all release channels, we should use this to test config changes against all versions of the client.
-
