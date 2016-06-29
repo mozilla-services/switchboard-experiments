@@ -57,7 +57,7 @@
       "max": 100
     },
     "values": {
-      "minimumTotalVisits": 5,
+      "minimumTotalVisits": 6,
       "lastVisitMinimumAgeMs": 30000,
       "lastVisitMaximumAgeMs": 600000
     }
