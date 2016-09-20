@@ -9,7 +9,6 @@
   },
   "offline-cache": {
     "match": {
-      "appId": "^org.mozilla.fennec|^org.mozilla.firefox_beta$"
     },
     "buckets": {
       "min": "0",
