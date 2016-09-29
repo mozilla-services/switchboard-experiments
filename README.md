@@ -1,7 +1,7 @@
 # switchboard-experiments
 ![travis-ci](https://travis-ci.org/mozilla-services/switchboard-experiments.svg?branch=master)
 
-This repository contains the JSON file that configures the [switchboard](https://github.com/mozilla-services/switchboard-server) expermients that are active on [Firefox for Android](https://developer.mozilla.org/en-US/docs/Simple_Firefox_for_Android_build).
+This repository contains the JSON file that configures the [switchboard](https://github.com/mozilla-services/switchboard-server) experiments that are active on [Firefox for Android](https://developer.mozilla.org/en-US/docs/Simple_Firefox_for_Android_build).
 
 Any changes to this file require the approval of a Firefox for Android peer, such as [@leibovic](https://github.com/leibovic), [@liuche](https://github.com/liuche), or [@mfinkle](https://github.com/mfinkle). Additionally, changes that affect release branches (i.e. Aurora/Beta/Release), must have approval from our product and release management teams.
 
@@ -30,7 +30,7 @@ UI experiments:
 
 Onboarding experiments are unique because we use local logic to determine whether a client is in an experiment. We do this because we must know if the experiment is active at startup, and we cannot wait to contact the Switchboard server. Given this fact, changes to `experiments.json` will not affect onboarding experiments. Those experiments are maintained in the client codebase.
 
-Experiment names **should not** be reused. Becuase we have one config for all clients, we do not have a way to guarantee which version of an experiment is active. So instead, we use new experiment names.
+Experiment names **should not** be reused. Because we have one config for all clients, we do not have a way to guarantee which version of an experiment is active. So instead, we use new experiment names.
 
 ## `experiments.json` Format
 
@@ -69,7 +69,7 @@ All key/value pairs **must** be satisfied for the experiment to be considered a 
 
 Supported keys are specified by the client, as parameters on the [server request](http://hg.mozilla.org/mozilla-central/file/494289c72ba3/mobile/android/thirdparty/com/keepsafe/switchboard/SwitchBoard.java#l226). Here is a list of keys that are currently supported in Firefox for Android:
 * `appId`: The Android app ID (e.g. `org.mozilla.fennec`, `org.mozilla.firefox_beta`, `org.mozilla.firefox`)
-* `version`: The Firefox app version number (e.g. `47.0a1'`, `46.0`)
+* `version`: The Firefox app version number (e.g. `47.0a1`, `46.0`)
 * `lang`: Language, pulled from the default locale (e.g. `eng`)
 * `country`: Country, pulled from the default locale (e.g. `USA`)
 * `device`: Android device name
