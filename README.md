@@ -1,6 +1,8 @@
 # switchboard-experiments
 ![travis-ci](https://travis-ci.org/mozilla-services/switchboard-experiments.svg?branch=master)
 
+## This configuration is oudated! The experiments configuration is now hosted on Kinto (Firefox 50+). For more information see the [Switchboard wiki page](https://wiki.mozilla.org/Mobile/Fennec/Android/Switchboard).
+
 This repository contains the JSON file that configures the [switchboard](https://github.com/mozilla-services/switchboard-server) expermients that are active on [Firefox for Android](https://developer.mozilla.org/en-US/docs/Simple_Firefox_for_Android_build).
 
 Any changes to this file require the approval of a Firefox for Android peer, such as [@leibovic](https://github.com/leibovic), [@liuche](https://github.com/liuche), or [@mfinkle](https://github.com/mfinkle). Additionally, changes that affect release branches (i.e. Aurora/Beta/Release), must have approval from our product and release management teams.
